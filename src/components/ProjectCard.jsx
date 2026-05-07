@@ -26,8 +26,7 @@ export default function ProjectCard({ project, onClick }) {
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-        <div className="flex items-center justify-between">
-          <span className="font-label-caps text-label-caps text-secondary tracking-widest">{project.category}</span>
+        <div className="flex items-center justify-end">
           <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_15px_rgba(255,107,0,0.3)]">
             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
           </div>
