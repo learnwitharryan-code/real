@@ -149,7 +149,7 @@ export default function App() {
 
       {/* About & Skills Section (Bento Grid) */}
       <section className="py-24 md:py-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto relative" id="process">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-auto md:auto-rows-[250px]">
           {/* About Card */}
           <div className="md:col-span-8 glass-panel rounded-xl p-8 flex flex-col justify-center card-glow transition-all duration-500 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 rounded-full blur-[60px] group-hover:bg-primary-container/10 transition-all duration-500"></div>
@@ -170,7 +170,7 @@ export default function App() {
             </div>
           </div>
           {/* Skills List */}
-          <div className="md:col-span-4 row-span-2 glass-panel rounded-xl p-8 card-glow transition-all duration-500 overflow-hidden">
+          <div className="md:col-span-4 md:row-span-2 glass-panel rounded-xl p-8 card-glow transition-all duration-500 overflow-hidden">
             <h3 className="font-label-caps text-label-caps text-secondary mb-6 tracking-widest uppercase">Arsenal</h3>
             <div className="flex flex-col gap-4">
               <div className="p-3 border border-white/5 rounded-DEFAULT hover:border-secondary-container/50 transition-colors flex justify-between items-center">
@@ -191,7 +191,7 @@ export default function App() {
             </div>
           </div>
           {/* Expertise Tags */}
-          <div className="md:col-span-8 row-span-2 glass-panel rounded-xl p-8 card-glow transition-all duration-500">
+          <div className="md:col-span-8 md:row-span-2 glass-panel rounded-xl p-8 card-glow transition-all duration-500">
             <h3 className="font-label-caps text-label-caps text-secondary mb-6 tracking-widest uppercase">Core Disciplines</h3>
             <div className="flex flex-wrap gap-4">
               <span className="px-6 py-3 border border-white/10 rounded-full font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:border-primary/50 transition-all cursor-default">Motion Graphics Animation</span>
