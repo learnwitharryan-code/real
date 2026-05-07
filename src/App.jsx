@@ -32,8 +32,8 @@ export default function App() {
   return (
     <div className="bg-background text-on-surface font-body-lg overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
       {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-[60px] border-b border-white/5 bg-gradient-to-b from-surface-dim to-transparent transition-all duration-500 ease-out">
-        <div className="flex justify-between items-center px-6 md:px-margin-desktop py-unit w-full max-w-container-max mx-auto relative z-50">
+      <nav className="fixed top-0 w-full z-40 bg-surface/60 backdrop-blur-[60px] border-b border-white/5 bg-gradient-to-b from-surface-dim to-transparent transition-all duration-500 ease-out">
+        <div className="flex justify-between items-center px-6 md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
           <div className="font-headline-md text-2xl md:text-headline-md tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
           <div className="hidden md:flex gap-8 items-center">
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#showcase">Showcase</a>
@@ -44,25 +44,41 @@ export default function App() {
           <div className="flex items-center gap-4">
             <button className="hidden md:block glass-panel px-6 py-2 rounded-DEFAULT text-primary font-body-lg text-body-lg btn-glow transition-all duration-300">Hire Me</button>
             <button 
-              className="md:hidden text-on-surface hover:text-primary transition-colors relative z-50"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-on-surface hover:text-primary transition-colors p-2"
+              onClick={() => setIsMobileMenuOpen(true)}
             >
-              <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>
-                {isMobileMenuOpen ? 'close' : 'menu'}
-              </span>
+              <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>menu</span>
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#showcase" onClick={() => setIsMobileMenuOpen(false)}>Showcase</a>
-          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a>
-          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#timeline" onClick={() => setIsMobileMenuOpen(false)}>Timeline</a>
-          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-          <a className="mt-4 px-8 py-3 glass-panel text-primary font-body-lg rounded-full btn-glow" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Hire Me</a>
-        </div>
       </nav>
+
+      {/* Premium Full-Screen Mobile Menu */}
+      <div className={`fixed inset-0 bg-background z-[100] flex flex-col transition-all duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-8'}`}>
+        {/* Mobile Menu Header */}
+        <div className="flex justify-between items-center px-6 py-unit w-full border-b border-white/5 bg-surface/60 backdrop-blur-xl">
+          <div className="font-headline-md text-2xl tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
+          <button 
+            className="text-on-surface hover:text-primary transition-colors p-2"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>close</span>
+          </button>
+        </div>
+
+        {/* Mobile Menu Links */}
+        <div className="flex-1 flex flex-col items-center justify-center gap-10 relative overflow-hidden">
+          {/* Subtle background glow for premium feel */}
+          <div className="absolute top-[20%] right-[-20%] w-[300px] h-[300px] bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+          <div className="absolute bottom-[20%] left-[-20%] w-[300px] h-[300px] bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+          
+          <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#showcase" onClick={() => setIsMobileMenuOpen(false)}>Showcase</a>
+          <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a>
+          <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#timeline" onClick={() => setIsMobileMenuOpen(false)}>Timeline</a>
+          <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+          <a className="mt-8 px-12 py-4 border border-primary/30 text-primary font-body-lg rounded-full shadow-[0_0_20px_rgba(255,107,0,0.2)] hover:bg-primary/10 transition-all text-xl" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Hire Me</a>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-[120px] pb-24 md:pb-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto">
