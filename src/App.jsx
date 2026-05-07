@@ -235,7 +235,14 @@ export default function App() {
           {/* Project Card 1 */}
           <div className="group relative aspect-[4/5] rounded-xl overflow-hidden glass-panel border border-white/5 cursor-pointer">
             <div className="absolute inset-0 bg-surface-dim z-0">
-              <img alt="Cyberpunk City Edit" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9K12bwpuungOrsDKed7gg65ZOVhdjT6da8Pl0-IpydAww7ak5KmmUd5aaodFNfT3rdfx8vjea55PWEtvS7E6Flr_smd-9OjMAHGB1ijnVkpnxsL6iy9D4V-AGWluOh10CX84gdfARNXffRsHfLrNm0JsUZut89EUMNwbJ078l1Dgaxd87bVwUdUnbqqk_pSdlgmSuHe2lYoRQDNJNNbzZoeQ7CJAvDeyokQ4Tf2AoUAV7_DRggGNu4-12LHj0r1WAjVy17Td6rW0j"/>
+              <video 
+                src="/cgi-work.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+              />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 w-full p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
