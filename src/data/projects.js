@@ -25,5 +25,14 @@ export const projects = [
     videoUrl: "", // Add video URL when available
     span: "md:col-span-2 lg:col-span-1",
     progress: 20
+  },
+  {
+    id: 4,
+    title: "Interface Motion",
+    category: "UI Animation",
+    thumbnail: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "/ui-animation.mp4",
+    span: "md:col-span-2 lg:col-span-2",
+    progress: 85
   }
 ];
