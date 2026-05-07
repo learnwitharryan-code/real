@@ -38,11 +38,10 @@ export default function App() {
           <div className="hidden md:flex gap-8 items-center">
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#showcase">Showcase</a>
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#process">Process</a>
-            <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#timeline">Timeline</a>
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#contact">Contact</a>
           </div>
           <div className="flex items-center gap-4">
-            <button className="hidden md:block glass-panel px-6 py-2 rounded-DEFAULT text-primary font-body-lg text-body-lg btn-glow transition-all duration-300">Hire Me</button>
+            <a href="#contact" className="hidden md:block glass-panel px-6 py-2 rounded-DEFAULT text-primary font-body-lg text-body-lg btn-glow transition-all duration-300">Hire Me</a>
             <button 
               className="md:hidden text-on-surface hover:text-primary transition-colors p-2"
               onClick={() => setIsMobileMenuOpen(true)}
@@ -74,7 +73,6 @@ export default function App() {
           
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#showcase" onClick={() => setIsMobileMenuOpen(false)}>Showcase</a>
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a>
-          <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#timeline" onClick={() => setIsMobileMenuOpen(false)}>Timeline</a>
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           <a className="mt-8 px-12 py-4 border border-primary/30 text-primary font-body-lg rounded-full shadow-[0_0_20px_rgba(255,107,0,0.2)] hover:bg-primary/10 transition-all text-xl" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Hire Me</a>
         </div>
