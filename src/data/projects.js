@@ -6,7 +6,7 @@ export const projects = [
     "thumbnail": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
     "videoUrl": "/cgi-work.mp4",
     "span": "",
-    "progress": 58
+    "progress": 28
   },
   {
     "id": 2,
@@ -24,6 +24,6 @@ export const projects = [
     "thumbnail": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
     "videoUrl": "/ui-animation.mp4",
     "span": "",
-    "progress": 36
+    "progress": 50
   }
 ];
