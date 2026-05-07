@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 
 export default function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Initialize Lenis smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
@@ -32,8 +33,8 @@ export default function App() {
     <div className="bg-background text-on-surface font-body-lg overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-[60px] border-b border-white/5 bg-gradient-to-b from-surface-dim to-transparent transition-all duration-500 ease-out">
-        <div className="flex justify-between items-center px-margin-desktop py-unit w-full max-w-container-max mx-auto">
-          <div className="font-headline-md text-headline-md tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
+        <div className="flex justify-between items-center px-6 md:px-margin-desktop py-unit w-full max-w-container-max mx-auto relative z-50">
+          <div className="font-headline-md text-2xl md:text-headline-md tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
           <div className="hidden md:flex gap-8 items-center">
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#showcase">Showcase</a>
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#process">Process</a>
@@ -42,26 +43,40 @@ export default function App() {
           </div>
           <div className="flex items-center gap-4">
             <button className="hidden md:block glass-panel px-6 py-2 rounded-DEFAULT text-primary font-body-lg text-body-lg btn-glow transition-all duration-300">Hire Me</button>
-            <button className="md:hidden text-on-surface hover:text-primary transition-colors">
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>menu</span>
+            <button 
+              className="md:hidden text-on-surface hover:text-primary transition-colors relative z-50"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>
+                {isMobileMenuOpen ? 'close' : 'menu'}
+              </span>
             </button>
           </div>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#showcase" onClick={() => setIsMobileMenuOpen(false)}>Showcase</a>
+          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a>
+          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#timeline" onClick={() => setIsMobileMenuOpen(false)}>Timeline</a>
+          <a className="text-3xl font-headline-md text-on-surface hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+          <a className="mt-4 px-8 py-3 glass-panel text-primary font-body-lg rounded-full btn-glow" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Hire Me</a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-[100px] pb-section-gap px-margin-desktop max-w-container-max mx-auto">
+      <section className="relative min-h-screen flex items-center pt-[120px] pb-24 md:pb-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-primary-container/10 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-secondary-container/10 rounded-full blur-[150px]"></div>
+          <div className="absolute top-[20%] left-[-10%] md:left-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary-container/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[20%] right-[-10%] md:right-[10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-secondary-container/10 rounded-full blur-[150px]"></div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full z-10">
-          <div className="lg:col-span-6 flex flex-col justify-center gap-6">
-            <h1 className="font-display-xl text-display-xl text-on-surface leading-tight">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-gutter w-full z-10 text-center lg:text-left mt-8 lg:mt-0">
+          <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start gap-6">
+            <h1 className="font-display-xl text-5xl sm:text-7xl md:text-display-xl text-on-surface leading-tight">
               Hey, I'm <br/><span className="text-gradient">Rishi Singh</span>
             </h1>
-            <h2 className="font-headline-md text-headline-md text-secondary">Motion Graphics Artist &amp; Video Editor</h2>
+            <h2 className="font-headline-md text-xl md:text-headline-md text-secondary">Motion Graphics Artist &amp; Video Editor</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
               Creating cinematic edits, motion graphics, and immersive digital visuals with creativity and storytelling.
             </p>
@@ -74,10 +89,10 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="lg:col-span-6 relative h-[600px] flex items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
+          <div className="lg:col-span-6 relative h-[350px] md:h-[600px] flex items-center justify-center [perspective:1000px] [transform-style:preserve-3d] mt-12 lg:mt-0">
             {/* 3D Orbiting System */}
             <div className="absolute inset-0 flex items-center justify-center [transform-style:preserve-3d] [transform:rotateX(75deg)] z-20">
-              <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] [transform-style:preserve-3d] animate-[orbit-ring_20s_linear_infinite]">
+              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] [transform-style:preserve-3d] animate-[orbit-ring_20s_linear_infinite]">
                 {/* Orbit Ring Track */}
                 <div className="absolute inset-0 border-[2px] border-primary-container/30 rounded-full shadow-[0_0_30px_rgba(255,107,0,0.2)] border-dashed"></div>
                 
@@ -133,7 +148,7 @@ export default function App() {
       </section>
 
       {/* About & Skills Section (Bento Grid) */}
-      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto relative" id="process">
+      <section className="py-24 md:py-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto relative" id="process">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px]">
           {/* About Card */}
           <div className="md:col-span-8 glass-panel rounded-xl p-8 flex flex-col justify-center card-glow transition-all duration-500 relative overflow-hidden group">
@@ -192,10 +207,10 @@ export default function App() {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto relative" id="showcase">
+      <section className="py-24 md:py-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto relative" id="showcase">
         <div className="mb-12 flex justify-between items-end">
           <div>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface mb-2">Showcase</h2>
+            <h2 className="font-headline-lg text-4xl md:text-headline-lg text-on-surface mb-2">Showcase</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">Selected works and cinematic experiments.</p>
           </div>
           <button className="hidden md:flex glass-panel px-6 py-2 rounded-DEFAULT text-on-surface font-body-lg text-body-lg hover:border-secondary-container transition-colors items-center gap-2">
@@ -270,8 +285,8 @@ export default function App() {
       </section>
 
       {/* Footer / Contact */}
-      <footer className="bg-surface-container-lowest border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter gap-unit w-full max-w-container-max mx-auto mt-section-gap" id="contact">
-        <div className="font-headline-md text-headline-md text-on-surface mb-4 md:mb-0 uppercase tracking-tighter">
+      <footer className="bg-surface-container-lowest border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-12 md:py-gutter gap-6 w-full max-w-container-max mx-auto mt-24 md:mt-section-gap" id="contact">
+        <div className="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4 md:mb-0 uppercase tracking-tighter">
           RISHI.MOTION
         </div>
         <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left mb-6 md:mb-0">
