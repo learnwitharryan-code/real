@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { projects } from './data/projects';
+import ProjectCard from './components/ProjectCard';
+import VideoModal from './components/VideoModal';
 
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState(null);
   // Initialize Lenis smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
@@ -232,76 +236,13 @@ export default function App() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {/* Project Card 1 */}
-          <div className="group relative aspect-[4/5] rounded-xl overflow-hidden glass-panel border border-white/5 cursor-pointer">
-            <div className="absolute inset-0 bg-surface-dim z-0">
-              <video 
-                src="/cgi-work.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-label-caps text-label-caps text-secondary tracking-widest">CGI Integration</span>
-                <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
-                </div>
-              </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface">Neon Genesis Drift</h3>
-            </div>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-variant z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="h-full bg-secondary-container w-[45%] relative">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-primary-container rounded-full shadow-[0_0_8px_#ff6b00]"></div>
-              </div>
-            </div>
-          </div>
-          {/* Project Card 2 */}
-          <div className="group relative aspect-[4/5] rounded-xl overflow-hidden glass-panel border border-white/5 cursor-pointer">
-            <div className="absolute inset-0 bg-surface-dim z-0">
-              <img alt="Abstract Topology" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiBshvfcO7M9lvWtqzcCXQsY9qPOuQruhClt4SmT4Q1B_jf4WmKG--F5j3Xx9fiKfkDZNIpF6AqImToOYv39IHbBZYnyzwCYe_FZU7pjh_WBKNRZSggbTW_CFSJNV0sI-KpjPtEONDds99653idRgM_blw6yg98VS06I7hqP9GNpMT2G7VQjXkAvJ-4Bj9YHbhW_E8h3_Csy4rtt8l6FLGb0et06SezGQyfJBFrtJyIuYo5AAtGYyUKjY8UHmTw_F2naifuqHimZG9"/>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-label-caps text-label-caps text-secondary tracking-widest">Title Sequence</span>
-                <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
-                </div>
-              </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface">Void Resonance</h3>
-            </div>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-variant z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="h-full bg-secondary-container w-[70%] relative">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-primary-container rounded-full shadow-[0_0_8px_#ff6b00]"></div>
-              </div>
-            </div>
-          </div>
-          {/* Project Card 3 */}
-          <div className="group relative aspect-[4/5] rounded-xl overflow-hidden glass-panel border border-white/5 cursor-pointer md:col-span-2 lg:col-span-1">
-            <div className="absolute inset-0 bg-surface-dim z-0">
-              <img alt="Retro Wave Edit" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjtUaf_INI7q_WXYxk06u5Pvex8ZtHocKJmNmh56UH1ggpHvXUa66ObMPY6urnIBG3R265zA4eWmJzD6BTBoxhNi3QzWKR8QQ8AyNaLUgaQW--himbhpO0g1C-gJpCMGIuXrWZVTygLknoctKlMuyuVYee2DNpkOtF8pAog7NnbqYblBbdD334U2qfnelSbuaCENgzKUAD7FqLLxD1GW3WVF3nW0hazl56qH9VazKwdZKceIL9ZyC3igjZBBKHYAKdyeyvGHEOH7Ym"/>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-label-caps text-label-caps text-secondary tracking-widest">Music Sync Edit</span>
-                <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
-                </div>
-              </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface">Synthwave Pulse</h3>
-            </div>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-variant z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="h-full bg-secondary-container w-[20%] relative">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-primary-container rounded-full shadow-[0_0_8px_#ff6b00]"></div>
-              </div>
-            </div>
-          </div>
+          {projects.map((project) => (
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              onClick={(p) => setActiveProject(p)} 
+            />
+          ))}
         </div>
       </section>
 
@@ -323,6 +264,11 @@ export default function App() {
           © 2024 RISHI SINGH STUDIO. ALL RIGHTS RESERVED.
         </div>
       </footer>
+
+      <VideoModal 
+        project={activeProject} 
+        onClose={() => setActiveProject(null)} 
+      />
     </div>
   );
 }
