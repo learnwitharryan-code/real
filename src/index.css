@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+      background: rgba(19, 19, 19, 0.4);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .btn-glow:hover {
+      border-color: #ff6b00;
+      box-shadow: 0 0 15px rgba(255, 107, 0, 0.3), inset 0 0 5px rgba(255, 107, 0, 0.2);
+  }
+  .card-glow:hover {
+      border-color: #00f2ff;
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+      background: rgba(57, 57, 57, 0.2);
+  }
+  .text-gradient {
+      background: linear-gradient(to right, #ffb693, #ff6b00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px) translateZ(0px); }
+    50% { transform: translateY(-20px) translateZ(0px); }
+    100% { transform: translateY(0px) translateZ(0px); }
+  }
+
+  @keyframes orbit-ring {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(360deg); }
+  }
+
+  @keyframes orbit-icon {
+    0% { transform: rotateZ(0deg) rotateX(-75deg); }
+    100% { transform: rotateZ(-360deg) rotateX(-75deg); }
+  }
+}
