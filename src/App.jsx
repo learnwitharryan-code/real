@@ -38,7 +38,7 @@ export default function App() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-40 bg-surface/60 backdrop-blur-[60px] border-b border-white/5 bg-gradient-to-b from-surface-dim to-transparent transition-all duration-500 ease-out">
         <div className="flex justify-between items-center px-6 md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
-          <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 md:h-10 w-auto object-contain" />
+          <img src="/logo.png" alt="Rishi Motion Logo" className="h-12 md:h-16 w-auto object-contain" />
           <div className="hidden md:flex gap-8 items-center">
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#showcase">Showcase</a>
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#process">Process</a>
@@ -60,7 +60,7 @@ export default function App() {
       <div className={`fixed inset-0 bg-background z-[100] flex flex-col transition-all duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-8'}`}>
         {/* Mobile Menu Header */}
         <div className="flex justify-between items-center px-6 py-unit w-full border-b border-white/5 bg-surface/60 backdrop-blur-xl">
-          <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 w-auto object-contain" />
+          <img src="/logo.png" alt="Rishi Motion Logo" className="h-12 w-auto object-contain" />
           <button
             className="text-on-surface hover:text-primary transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -248,7 +248,7 @@ export default function App() {
 
       {/* Footer / Contact */}
       <footer className="bg-surface-container-lowest border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-12 md:py-gutter gap-6 w-full max-w-container-max mx-auto mt-24 md:mt-section-gap" id="contact">
-        <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 md:h-12 w-auto object-contain mb-4 md:mb-0" />
+        <img src="/logo.png" alt="Rishi Motion Logo" className="h-12 md:h-16 w-auto object-contain mb-4 md:mb-0" />
         <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left mb-6 md:mb-0">
           <span className="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors cursor-pointer">rishusinghrk045@gmail.com</span>
         </div>
