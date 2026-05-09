@@ -255,7 +255,7 @@ export default function App() {
           <span className="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors cursor-pointer">rishusinghrk045@gmail.com</span>
         </div>
         <div className="flex gap-6 mb-6 md:mb-0">
-          <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out" href="#">Instagram</a>
+          <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out" href="https://www.instagram.com/rrisshiii?igsh=cm9ld2lmemFxaXl1&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out" href="#">LinkedIn</a>
           <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out" href="#">Behance</a>
           <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out" href="#">Vimeo</a>
