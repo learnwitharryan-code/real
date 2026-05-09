@@ -6,7 +6,7 @@ export const projects = [
     "thumbnail": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
     "videoUrl": "/cgi-work.mp4",
     "span": "",
-    "progress": 77
+    "progress": 73
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@ export const projects = [
     "thumbnail": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
     "videoUrl": "/ui-animation-2.mp4",
     "span": "",
-    "progress": 56
+    "progress": 28
   },
   {
     "id": 3,
@@ -24,6 +24,6 @@ export const projects = [
     "thumbnail": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000",
     "videoUrl": "/ui-animation.mp4",
     "span": "",
-    "progress": 33
+    "progress": 64
   }
 ];

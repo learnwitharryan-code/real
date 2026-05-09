@@ -38,7 +38,7 @@ export default function App() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-40 bg-surface/60 backdrop-blur-[60px] border-b border-white/5 bg-gradient-to-b from-surface-dim to-transparent transition-all duration-500 ease-out">
         <div className="flex justify-between items-center px-6 md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
-          <div className="font-headline-md text-2xl md:text-headline-md tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
+          <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 md:h-10 w-auto object-contain" />
           <div className="hidden md:flex gap-8 items-center">
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#showcase">Showcase</a>
             <a className="text-on-surface-variant hover:text-on-surface hover:backdrop-blur-[80px] hover:bg-surface-bright/10 transition-colors font-body-lg text-body-lg px-4 py-2 rounded-DEFAULT" href="#process">Process</a>
@@ -46,7 +46,7 @@ export default function App() {
           </div>
           <div className="flex items-center gap-4">
             <a href="#contact" className="hidden md:block glass-panel px-6 py-2 rounded-DEFAULT text-primary font-body-lg text-body-lg btn-glow transition-all duration-300">Hire Me</a>
-            <button 
+            <button
               className="md:hidden text-on-surface hover:text-primary transition-colors p-2"
               onClick={() => setIsMobileMenuOpen(true)}
             >
@@ -60,8 +60,8 @@ export default function App() {
       <div className={`fixed inset-0 bg-background z-[100] flex flex-col transition-all duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-8'}`}>
         {/* Mobile Menu Header */}
         <div className="flex justify-between items-center px-6 py-unit w-full border-b border-white/5 bg-surface/60 backdrop-blur-xl">
-          <div className="font-headline-md text-2xl tracking-tighter text-on-surface uppercase">RISHI.MOTION</div>
-          <button 
+          <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 w-auto object-contain" />
+          <button
             className="text-on-surface hover:text-primary transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -74,7 +74,7 @@ export default function App() {
           {/* Subtle background glow for premium feel */}
           <div className="absolute top-[20%] right-[-20%] w-[300px] h-[300px] bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
           <div className="absolute bottom-[20%] left-[-20%] w-[300px] h-[300px] bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
-          
+
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#showcase" onClick={() => setIsMobileMenuOpen(false)}>Showcase</a>
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a>
           <a className="text-5xl font-display-xl tracking-tight text-on-surface hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
@@ -92,7 +92,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-gutter w-full z-10 text-center lg:text-left mt-8 lg:mt-0">
           <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start gap-6">
             <h1 className="font-display-xl text-5xl sm:text-7xl md:text-display-xl text-on-surface leading-tight">
-              Hey, I'm <br/><span className="text-gradient">Rishi Singh</span>
+              Hey, I'm <br /><span className="text-gradient">Rishi Singh</span>
             </h1>
             <h2 className="font-headline-md text-xl md:text-headline-md text-secondary">Motion Graphics Artist &amp; Video Editor</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
@@ -113,7 +113,7 @@ export default function App() {
               <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] [transform-style:preserve-3d] animate-[orbit-ring_20s_linear_infinite]">
                 {/* Orbit Ring Track */}
                 <div className="absolute inset-0 border-[2px] border-primary-container/30 rounded-full shadow-[0_0_30px_rgba(255,107,0,0.2)] border-dashed"></div>
-                
+
                 {/* After Effects */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d]">
                   <div className="animate-[orbit-icon_20s_linear_infinite]">
@@ -122,7 +122,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Premiere Pro */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 [transform-style:preserve-3d]">
                   <div className="animate-[orbit-icon_20s_linear_infinite]">
@@ -131,7 +131,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Blender */}
                 <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d]">
                   <div className="animate-[orbit-icon_20s_linear_infinite]">
@@ -140,7 +140,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* CapCut */}
                 <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d]">
                   <div className="animate-[orbit-icon_20s_linear_infinite]">
@@ -153,9 +153,9 @@ export default function App() {
             </div>
 
             {/* 3D Character Image with floating animation */}
-            <img 
-              src="/character.png" 
-              alt="Rishi 3D Character" 
+            <img
+              src="/character.png"
+              alt="Rishi 3D Character"
               className="absolute h-[90%] object-contain drop-shadow-[0_0_40px_rgba(255,107,0,0.4)] hover:scale-105 transition-transform duration-500 ease-out z-30"
               style={{ animation: 'float 6s ease-in-out infinite' }}
             />
@@ -237,10 +237,10 @@ export default function App() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {projects.map((project) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              onClick={(p) => setActiveProject(p)} 
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={(p) => setActiveProject(p)}
             />
           ))}
         </div>
@@ -248,9 +248,7 @@ export default function App() {
 
       {/* Footer / Contact */}
       <footer className="bg-surface-container-lowest border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-12 md:py-gutter gap-6 w-full max-w-container-max mx-auto mt-24 md:mt-section-gap" id="contact">
-        <div className="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4 md:mb-0 uppercase tracking-tighter">
-          RISHI.MOTION
-        </div>
+        <img src="/logo.png" alt="Rishi Motion Logo" className="h-8 md:h-12 w-auto object-contain mb-4 md:mb-0" />
         <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left mb-6 md:mb-0">
           <span className="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors cursor-pointer">rishusinghrk045@gmail.com</span>
         </div>
@@ -265,9 +263,9 @@ export default function App() {
         </div>
       </footer>
 
-      <VideoModal 
-        project={activeProject} 
-        onClose={() => setActiveProject(null)} 
+      <VideoModal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
       />
     </div>
   );
